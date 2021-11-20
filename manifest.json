@@ -1,0 +1,20 @@
+{
+  "version": "0.1.0",
+  "author": "Aral Roca",
+  "name": "Teaful DevTools",
+  "short_name": "Teaful DevTools",
+  "description": "Teaful DevTools for debugging application's state changes.",
+  "homepage_url": "https://github.com/teafuljs/teaful-devtools",
+  "manifest_version": 2,
+  "icons": {
+    "16": "img/logo_16x16.png",
+    "48": "img/logo_48x48.png",
+    "128": "img/logo_128x128.png"
+  },
+  "devtools_page": "devtools.html",
+  "permissions": [
+    "tabs",
+    "http://*/*",
+    "https://*/*"
+  ]
+}
