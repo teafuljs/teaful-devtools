@@ -8,7 +8,6 @@ body {
 }
 
 header {
-  display: flex;
   border-bottom: 1px solid #8888887a;
 }
 
@@ -22,4 +21,33 @@ header > div {
 
 header select {
   border: none;
+}
+
+main {
+  display: flex;
+}
+
+main .sidebar {
+  min-width: 150px;
+}
+
+main .sidebar > div {
+  font-size: 13px;
+  padding: 10px;
+  border-right: 1px solid #f9f9ef;
+  cursor: pointer;
+}
+
+main .sidebar > div:hover {
+  background-color: #f9f9ef;
+}
+
+main .sidebar .active {
+  background-color: #f9f9f9;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+main .code {
+  width: 100%;
 }

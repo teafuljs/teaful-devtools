@@ -1,41 +1,28 @@
 import React from 'react';
-import { useStore, getStore } from '../index'
+import { useStore } from '../index';
 
 export default function Header() {
   const [stores] = useStore.stores();
-  const [selectedStore] = useStore.selectedStore();
-  const [history] = useStore.stores[selectedStore].history();
+  const [, setSelectHistory] = useStore.selectedHistory();
+  const [selectedStore, setSelectedStore] = useStore.selectedStore();
 
   return (
     <header>
-      <div>
-        <b>Store:</b>
-        <select className="store" onChange={onChangeStore}>
-          {stores.map((store, index) => (
-            <option key={index} value={index}>{store.name}</option>
-          ))}
-        </select>
-      </div>
-      <div>
-      <b>History:</b>
-      <select onChange={onChangeHistoryPreview}>
-        {history.map(({ epoch }, i) => (
-          <option key={epoch+i} value={i}>
-            {i === 0 ? 'Initial store' : new Date(epoch).toLocaleString()}
+      <b>Store:</b>
+      <select
+        value={selectedStore}
+        className="store"
+        onChange={(e) => {
+          setSelectedStore(+e.target.value);
+          setSelectHistory(0);
+        }}
+      >
+        {stores.map((store, index) => (
+          <option key={index} value={index}>
+            {store.name}
           </option>
         ))}
       </select>
-      </div>
     </header>
   );
-}
-
-function onChangeStore(event) {
-  const [, setSelectedStore] = getStore.selectedStore()
-  setSelectedStore(+event.target.value)
-}
-
-function onChangeHistoryPreview(event) {
-  const [, setSelectHistory] = getStore.selectedHistory()
-  setSelectHistory(+event.target.value)
 }
