@@ -37,6 +37,7 @@ export default function History() {
       <div className="code">
         {currentHistory && (
           <ReactDiffViewer
+            useDarkTheme={window.matchMedia('(prefers-color-scheme: dark)').matches}
             hideLineNumbers
             oldValue={
               currentHistory.prevStore

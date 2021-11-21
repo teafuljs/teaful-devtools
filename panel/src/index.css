@@ -11,6 +11,10 @@ header {
   border-bottom: 1px solid #8888887a;
 }
 
+header select {
+  background-color: transparent;
+}
+
 header b {
   padding: 0 5px;
 }
@@ -50,4 +54,39 @@ main .sidebar .active {
 
 main .code {
   width: 100%;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: #fff;
+    background-color: #222;
+  }
+  header select {
+    color: #fff;
+  }
+  main .sidebar > div {
+    border-right: 1px solid #333;
+  }
+  
+  main .sidebar > div:hover {
+    background-color: #333;
+  }
+  
+  main .sidebar .active {
+    background-color: #111;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  main .sidebar > div {
+    border-right: 1px solid #f9f9ef;
+  }
+  
+  main .sidebar > div:hover {
+    background-color: #f9f9ef;
+  }
+  
+  main .sidebar .active {
+    background-color: #f9f9f9;
+  }
 }
