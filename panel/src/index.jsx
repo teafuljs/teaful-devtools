@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import createStore from 'teaful';
 import Header from './Header';
 import History from './History';
+import port from './util/port'
 
 import './index.css';
 
@@ -17,6 +18,12 @@ export const { useStore, getStore } = createStore({
   selectedHistory: 0,
   stores: [],
 });
+
+function handleMessage({ source, store, prevStore, index = 0 }) {
+  if(source !== 'teaful-devtools') return
+  const [, setHistory] = getStore.stores[index].history()
+  setHistory(h => [...h, { epoch: Date.now(), store, prevStore }]);
+}
 
 function App() {
   const [status, setStatus] = useState('loading');
@@ -40,10 +47,12 @@ function App() {
             const [, setStores] = getStore.stores();
             setStores(stores);
             setStatus('ok');
+            port.onMessage.addListener(handleMessage);
           },
         );
       },
     );
+    return () => port.onMessage.removeListener(handleMessage);
   }, []);
 
   if (status === 'ko') {
