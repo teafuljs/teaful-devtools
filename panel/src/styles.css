@@ -17,6 +17,12 @@ header {
   align-items: center;
 }
 
+header .buttons {
+  border-right: 1px solid #8888887a;
+  padding: 0 5px;
+  margin-right: 5px;
+}
+
 header select {
   background-color: transparent;
 }
@@ -46,10 +52,6 @@ main .sidebar > div {
   cursor: pointer;
 }
 
-main .sidebar .active {
-  font-weight: bold;
-  font-size: 11px;
-}
 
 main .code {
   width: 100%;
@@ -69,7 +71,7 @@ main .code {
 @media (prefers-color-scheme: dark) {
   body {
     color: #dbdbdb;
-    background-color: #222;
+    background-color: #292a2d;
   }
 
   header button {
@@ -90,16 +92,17 @@ main .code {
 
   main .sidebar > div {
     border-right: 1px solid #333;
+    color: #919191;
   }
   
-  main .sidebar > div:hover {
-    background-color: #333;
+  main .sidebar > div:hover:not(.active) {
+    background-color: #202020;
+    color: #dbdbdb;
   }
   
   main .sidebar .active {
+    color: #dbdbdb;
     background-color: #111;
-    border-top: 1px solid #333;
-    border-bottom: 1px solid #333;
   }
 }
 
@@ -112,13 +115,11 @@ main .code {
     border-right: 1px solid #f9f9ef;
   }
   
-  main .sidebar > div:hover {
+  main .sidebar > div:hover:not(.active) {
     background-color: #f9f9ef;
   }
   
   main .sidebar .active {
     background-color: #f9f9f9;
-    border-top: 1px solid #f9f9ef;
-    border-bottom: 1px solid #f9f9ef;
   }
 }

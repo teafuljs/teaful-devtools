@@ -21,7 +21,7 @@ export default function Header() {
 
   return (
     <header>
-      <div>
+      <div className="buttons">
         <button
           title="Add a store modification"
           onClick={addStoreModification}
