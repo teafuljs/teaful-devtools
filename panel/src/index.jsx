@@ -1,9 +1,11 @@
 import { h, render } from 'preact';
 import { useState, useEffect } from 'react';
 
+import AddModification from './AddModification';
 import Header from './Header';
 import History from './History';
 import initStores from './util/initStores';
+import { useStore } from './store';
 import {
   registerReceiveMessage,
   unregisterReceiveMessage,
@@ -12,6 +14,7 @@ import {
 import './styles.css';
 
 function App() {
+  const [showAdd] = useStore.showAdd();
   const [status, setStatus] = useState('loading');
 
   useEffect(() => {
@@ -44,7 +47,7 @@ function App() {
   return (
     <div className="devtools">
       <Header />
-      <History />
+      {showAdd ? <AddModification /> : <History />}
     </div>
   );
 }

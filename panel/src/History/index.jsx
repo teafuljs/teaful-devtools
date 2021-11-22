@@ -30,11 +30,11 @@ export default function History() {
             key={epoch + i}
             onClick={() => setSelectHistory(i)}
           >
-            <div style={{ fontWeight: 'bold'}}>#{history.length - i}</div>
+            <div style={{ fontWeight: 'bold' }}>#{history.length - i}</div>
             <small>
-              {new Intl.DateTimeFormat(undefined, { timeStyle: 'medium' }).format(
-                new Date(epoch),
-              )}
+              {new Intl.DateTimeFormat(undefined, {
+                timeStyle: 'medium',
+              }).format(new Date(epoch))}
             </small>
           </div>
         ))}

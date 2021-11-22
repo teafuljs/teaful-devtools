@@ -6,17 +6,15 @@ import IconAdd from './icon-add';
 
 export default function Header() {
   const [stores] = useStore.stores();
+  const [showAdd, setShowAdd] = useStore.showAdd();
   const [, setSelectHistory] = useStore.selectedHistory();
   const [selectedStore, setSelectedStore] = useStore.selectedStore();
   const iconStyle = { width: 13, fill: 'currentColor' };
 
   function clearHistory() {
     initStores();
+    setShowAdd(false);
     setSelectHistory(0);
-  }
-
-  function addStoreModification() {
-    alert('todo');
   }
 
   return (
@@ -24,10 +22,12 @@ export default function Header() {
       <div className="buttons">
         <button
           title="Add a store modification"
-          onClick={addStoreModification}
+          onClick={() => setShowAdd((v) => !v)}
           className="transparent-button"
         >
-          <IconAdd style={iconStyle} />
+          <IconAdd
+            style={{ ...iconStyle, ...(showAdd ? { fill: '#8ab4f8' } : {}) }}
+          />
         </button>
         <button
           title="Clear history of modifications"
