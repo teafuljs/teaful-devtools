@@ -56,6 +56,11 @@ main .code {
   width: 100%;
 }
 
+.devtools.message {
+  margin: 20px;
+  text-align: center;
+}
+
 @media (prefers-color-scheme: dark) {
   body {
     color: #fff;

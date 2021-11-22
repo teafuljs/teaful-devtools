@@ -1,9 +1,9 @@
 import { h, render } from 'preact';
+import { useState, useEffect } from 'react';
 import createStore from 'teaful';
 import Header from './Header';
 import History from './History';
 
-import 'preact/devtools';
 import './index.css';
 
 export const { useStore, getStore } = createStore({
@@ -53,6 +53,25 @@ export const { useStore, getStore } = createStore({
 });
 
 function App() {
+  const [status, setStatus] = useState('loading');
+
+  useEffect(() => {
+    chrome.devtools.inspectedWindow.eval(
+      'window.__TEAFUL_DEVTOOLS__',
+      (result, isException) => setStatus(!result || isException ? 'ko' : 'ok'),
+    );
+  }, []);
+
+  if (status === 'ko') {
+    return (
+      <div className="devtools message">This page is not compatible with Teaful.</div>
+    );
+  }
+
+  if (status === 'loading') {
+    return null
+  }
+
   return (
     <div className="devtools">
       <Header />
