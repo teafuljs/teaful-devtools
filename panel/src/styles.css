@@ -58,9 +58,11 @@ main .code {
 
 .save-modification {
   display: flex;
-  align-items: flex-end;
+  height: 30px;
+  align-items: center;
   justify-content: flex-end;
   gap: 5px;
+  padding: 0 10px;
 }
 
 .transparent-button {
