@@ -56,6 +56,13 @@ main .code {
   width: 100%;
 }
 
+.save-modification {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 5px;
+}
+
 .transparent-button {
   background-color: transparent;
   border: none;
@@ -102,6 +109,15 @@ main .code {
   main .sidebar .active {
     color: #dbdbdb;
     background-color: #111;
+  }
+
+  .save-modification button {
+    color: #919191;
+    background-color: #3e3c3c;
+  }
+
+  .save-modification button:hover {
+    color: #dbdbdb;
   }
 }
 

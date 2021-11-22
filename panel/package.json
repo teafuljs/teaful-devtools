@@ -7,8 +7,10 @@
     "lint": "prettier --check \"src/**/*.{js,jsx}\""
   },
   "dependencies": {
+    "ace-builds": "^1.4.13",
     "preact": "10.5.15",
     "react": "npm:@preact/compat@17.0.3",
+    "react-ace": "^9.5.0",
     "react-diff-viewer": "3.1.1",
     "react-dom": "npm:@preact/compat@17.0.3",
     "teaful": "0.8.0"
