@@ -19,10 +19,14 @@ export const { useStore, getStore } = createStore({
   stores: [],
 });
 
-function handleMessage({ source, store, prevStore, index = 0 }) {
+function increaseHistory({ source, store, prevStore, index = 0 }) {
   if(source !== 'teaful-devtools') return
-  const [, setHistory] = getStore.stores[index].history()
+  const [history, setHistory] = getStore.stores[index].history()
+  const [, setSelectedHistory] = getStore.selectedHistory()
+  const [, setSelectedStore] = getStore.selectedStore()
   setHistory(h => [...h, { epoch: Date.now(), store, prevStore }]);
+  setSelectedStore(index);
+  setSelectedHistory(history.length);
 }
 
 function App() {
@@ -47,12 +51,12 @@ function App() {
             const [, setStores] = getStore.stores();
             setStores(stores);
             setStatus('ok');
-            port.onMessage.addListener(handleMessage);
+            port.onMessage.addListener(increaseHistory);
           },
         );
       },
     );
-    return () => port.onMessage.removeListener(handleMessage);
+    return () => port.onMessage.removeListener(increaseHistory);
   }, []);
 
   if (status === 'ko') {
