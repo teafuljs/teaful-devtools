@@ -64,7 +64,7 @@ function App() {
 
   if (status === 'ko') {
     return (
-      <div className="devtools message">This page is not compatible with Teaful.</div>
+      <div className="devtools message">This page is not compatible with Teaful DevTools.</div>
     );
   }
 
