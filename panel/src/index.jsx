@@ -6,50 +6,16 @@ import History from './History';
 
 import './index.css';
 
+/**
+ * @example
+ * window.__TEAFUL_DEVTOOLS__ = [getStore, getStore] // all stores
+ */
+const TEAFUL = 'window.__TEAFUL_DEVTOOLS__';
+
 export const { useStore, getStore } = createStore({
   selectedStore: 0,
   selectedHistory: 0,
-  stores: [
-    {
-      name: '#1',
-      history: [
-        {
-          epoch: 1637488941322,
-          store: { count: 0 },
-        },
-        {
-          epoch: 1637488941322,
-          store: { count: 1 },
-          prevStore: { count: 0 },
-        },
-        {
-          epoch: 1637488951322,
-          store: { count: 2 },
-          prevStore: { count: 1 },
-        },
-        {
-          epoch: 1637488961322,
-          store: { count: 3 },
-          prevStore: { count: 2 },
-        },
-        {
-          epoch: 1637488971322,
-          store: { count: 0 },
-          prevStore: { count: 3 },
-        },
-      ],
-    },
-    {
-      name: '#2',
-      history: [
-        {
-          epoch: 1637488941322,
-          store: { username: 'Aral', age: 31 },
-        },
-      ],
-    },
-    { name: '#3', history: [] },
-  ],
+  stores: [],
 });
 
 function App() {
@@ -57,19 +23,43 @@ function App() {
 
   useEffect(() => {
     chrome.devtools.inspectedWindow.eval(
-      'window.__TEAFUL_DEVTOOLS__',
-      (result, isException) => setStatus(!result || isException ? 'ko' : 'ok'),
+      `Array.isArray(${TEAFUL})`,
+      (result, isException) => {
+        if (!result || isException) return setStatus('ko');
+        chrome.devtools.inspectedWindow.eval(
+          `${TEAFUL}.map((getStore, index) => ({ 
+            name: '#' + (index + 1), 
+            history: [{ 
+              epoch: Date.now(), 
+              store: getStore()[0] 
+            }]
+           })
+          )`,
+          (stores, isException) => {
+            if (!stores || isException) return setStatus('ko');
+            const [, setStores] = getStore.stores();
+            setStores(stores);
+            setStatus('ok');
+          },
+        );
+      },
     );
   }, []);
 
   if (status === 'ko') {
     return (
-      <div className="devtools message">This page is not compatible with Teaful DevTools.</div>
+      <div className="devtools message">
+        This page is not compatible with{' '}
+        <a href="https://github.com/teafuljs/teaful-devtools" target="_blank">
+          Teaful DevTools
+        </a>
+        .
+      </div>
     );
   }
 
   if (status === 'loading') {
-    return null
+    return null;
   }
 
   return (
