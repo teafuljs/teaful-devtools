@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import createStore from 'teaful';
 import Header from './Header';
 import History from './History';
-import port from './util/port'
+import port from './util/port';
 
 import './index.css';
 
@@ -19,15 +19,17 @@ export const { useStore, getStore } = createStore({
   stores: [],
 });
 
-function increaseHistory({ source, store, prevStore, index = 0 }) {
-  if(source !== 'teaful-devtools') return
-  const [, setHistory] = getStore.stores[index].history()
-  const [, setSelectedHistory] = getStore.selectedHistory()
-  const [, setSelectedStore] = getStore.selectedStore()
-  setHistory(h => [{ epoch: Date.now(), store, prevStore }, ...h]);
+function increaseHistory({ source, store: s, prevStore: p, index = 0 }) {
+  if (source !== 'teaful-devtools') return;
+  const store = s ? JSON.stringify(s, undefined, 2) : undefined;
+  const prevStore = p ? JSON.stringify(p, undefined, 2) : undefined;
+  const [, setHistory] = getStore.stores[index].history();
+  const [, setSelectedHistory] = getStore.selectedHistory();
+  const [, setSelectedStore] = getStore.selectedStore();
+  setHistory((h) => [{ epoch: Date.now(), store, prevStore }, ...h]);
   setSelectedStore(index);
   setSelectedHistory(0);
-  document.querySelector('.sidebar').scrollTop = 0
+  document.querySelector('.sidebar').scrollTop = 0;
 }
 
 function App() {
@@ -43,7 +45,7 @@ function App() {
             name: '#' + (index + 1), 
             history: [{ 
               epoch: Date.now(), 
-              store: getStore()
+              store: JSON.stringify(getStore(), undefined, 2)
             }]
            })
           )`,

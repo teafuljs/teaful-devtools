@@ -41,12 +41,8 @@ export default function History() {
               window.matchMedia('(prefers-color-scheme: dark)').matches
             }
             hideLineNumbers
-            oldValue={
-              currentHistory.prevStore
-                ? JSON.stringify(currentHistory.prevStore, undefined, 2)
-                : undefined
-            }
-            newValue={JSON.stringify(currentHistory.store, undefined, 2)}
+            oldValue={currentHistory.prevStore}
+            newValue={currentHistory.store}
             splitView={false}
           />
         )}

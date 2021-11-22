@@ -75,9 +75,15 @@ main .code {
     color: #fff;
     background-color: #222;
   }
+
+  header {
+    background-color: #292a2d;
+  }
+  
   header select {
     color: #fff;
   }
+
   main .sidebar > div {
     border-right: 1px solid #333;
   }
