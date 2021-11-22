@@ -15,7 +15,6 @@ header {
   display: flex;
   font-size: 12px;
   align-items: center;
-  justify-content: center;
 }
 
 header select {
@@ -24,10 +23,6 @@ header select {
 
 header b {
   padding: 0 5px;
-}
-
-header > div {
-  flex: 1;
 }
 
 header select {
@@ -51,18 +46,19 @@ main .sidebar > div {
   cursor: pointer;
 }
 
-main .sidebar > div:hover {
-  background-color: #f9f9ef;
-}
-
 main .sidebar .active {
-  background-color: #f9f9f9;
   font-weight: bold;
   font-size: 11px;
 }
 
 main .code {
   width: 100%;
+}
+
+.transparent-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 .devtools.message {
@@ -72,8 +68,16 @@ main .code {
 
 @media (prefers-color-scheme: dark) {
   body {
-    color: #fff;
+    color: #dbdbdb;
     background-color: #222;
+  }
+
+  header button {
+    color: #919191;
+  }
+
+  header button:hover {
+    color: #dbdbdb;
   }
 
   header {
@@ -81,7 +85,7 @@ main .code {
   }
 
   header select {
-    color: #fff;
+    color: #dbdbdb;
   }
 
   main .sidebar > div {
@@ -94,6 +98,8 @@ main .code {
   
   main .sidebar .active {
     background-color: #111;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
   }
 }
 
@@ -112,5 +118,7 @@ main .code {
   
   main .sidebar .active {
     background-color: #f9f9f9;
+    border-top: 1px solid #f9f9ef;
+    border-bottom: 1px solid #f9f9ef;
   }
 }

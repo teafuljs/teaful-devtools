@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import ReactDiffViewer from 'react-diff-viewer';
-import { useStore } from '../index';
+import { useStore } from '../store';
 
 export default function History() {
   const [selectedHistory, setSelectHistory] = useStore.selectedHistory();
