@@ -1,5 +1,7 @@
 body {
   margin: 0;
+  max-height: 100vh;
+  overflow-y: hidden;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -9,6 +11,11 @@ body {
 
 header {
   border-bottom: 1px solid #8888887a;
+  height: 25px;
+  display: flex;
+  font-size: 12px;
+  align-items: center;
+  justify-content: center;
 }
 
 header select {
@@ -33,10 +40,12 @@ main {
 
 main .sidebar {
   min-width: 150px;
+  overflow-y: auto;
+  max-height: calc(100vh - 25px);
 }
 
 main .sidebar > div {
-  font-size: 13px;
+  font-size: 12px;
   padding: 10px;
   border-right: 1px solid #f9f9ef;
   cursor: pointer;
@@ -49,7 +58,7 @@ main .sidebar > div:hover {
 main .sidebar .active {
   background-color: #f9f9f9;
   font-weight: bold;
-  font-size: 12px;
+  font-size: 11px;
 }
 
 main .code {
@@ -83,6 +92,10 @@ main .code {
 }
 
 @media (prefers-color-scheme: light) {
+  header {
+    background-color: #f1f3f4;
+  }
+
   main .sidebar > div {
     border-right: 1px solid #f9f9ef;
   }

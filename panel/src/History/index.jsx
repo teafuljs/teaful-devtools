@@ -30,7 +30,7 @@ export default function History() {
             key={epoch + i}
             onClick={() => setSelectHistory(i)}
           >
-            {i === 0 ? 'Initial store' : new Date(epoch).toLocaleString()}
+            {new Date(epoch).toLocaleString()}
           </div>
         ))}
       </div>
