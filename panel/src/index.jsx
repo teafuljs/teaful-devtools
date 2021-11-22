@@ -8,7 +8,7 @@ import './index.css';
 
 /**
  * @example
- * window.__TEAFUL_DEVTOOLS__ = [getStore, getStore] // all stores
+ * window.__TEAFUL_DEVTOOLS__ = [() => getStore()[0]] // for all stores
  */
 const TEAFUL = 'window.__TEAFUL_DEVTOOLS__';
 
@@ -31,7 +31,7 @@ function App() {
             name: '#' + (index + 1), 
             history: [{ 
               epoch: Date.now(), 
-              store: getStore()[0] 
+              store: getStore()
             }]
            })
           )`,
