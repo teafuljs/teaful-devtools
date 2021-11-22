@@ -40,14 +40,13 @@ main {
 }
 
 main .sidebar {
-  min-width: 150px;
   overflow-y: auto;
   max-height: calc(100vh - 25px);
 }
 
 main .sidebar > div {
   font-size: 12px;
-  padding: 10px;
+  padding: 10px 20px 10px 10px;
   border-right: 1px solid #f9f9ef;
   cursor: pointer;
 }

@@ -30,7 +30,9 @@ export default function History() {
             key={epoch + i}
             onClick={() => setSelectHistory(i)}
           >
-            {new Date(epoch).toLocaleString()}
+            {new Intl.DateTimeFormat(undefined, { timeStyle: 'medium' }).format(
+              new Date(epoch),
+            )}
           </div>
         ))}
       </div>
