@@ -127,8 +127,12 @@ main .code {
 }
 
 @media (prefers-color-scheme: light) {
-  header {
+  header, .save-modification {
     background-color: #f1f3f4;
+  }
+
+  .save-modification {
+    border-top: 1px solid #8888887a;
   }
 
   header button {
@@ -149,6 +153,15 @@ main .code {
   
   main .sidebar .active {
     background-color: #f9f9f9;
+  }
+
+  .save-modification button {
+    color: #080808c7;
+    border: 1px solid #d8d8d8;
+  }
+
+  .save-modification button:hover {
+    color: #202124;
   }
 
   .transparent-button.active {

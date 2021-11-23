@@ -1,10 +1,5 @@
+import { TEAFUL } from '../constants.js';
 import { getStore } from '../store.js';
-
-/**
- * @example
- * window.__TEAFUL_DEVTOOLS__ = [() => getStore()[0]] // for all stores
- */
-const TEAFUL = 'window.__TEAFUL_DEVTOOLS__';
 
 export default function initStores() {
   return new Promise((res, rej) => {
@@ -17,7 +12,7 @@ export default function initStores() {
             name: '#' + (index + 1), 
             history: [{ 
               epoch: Date.now(), 
-              store: JSON.stringify(getStore(), undefined, 2)
+              store: JSON.stringify(getStore()[0], undefined, 2)
             }]
             })
           )`,
