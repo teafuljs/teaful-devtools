@@ -51,7 +51,6 @@ main .sidebar > div {
   cursor: pointer;
 }
 
-
 main .code {
   width: 100%;
 }
@@ -121,11 +120,23 @@ main .code {
   .save-modification button:hover {
     color: #dbdbdb;
   }
+
+  .transparent-button.active {
+    color: #8ab4f8;
+  }
 }
 
 @media (prefers-color-scheme: light) {
   header {
     background-color: #f1f3f4;
+  }
+
+  header button {
+    color: #6e6e6e;
+  }
+
+  header button:hover {
+    color: #202124;
   }
 
   main .sidebar > div {
@@ -138,5 +149,9 @@ main .code {
   
   main .sidebar .active {
     background-color: #f9f9f9;
+  }
+
+  .transparent-button.active {
+    color: #1b73e8;
   }
 }

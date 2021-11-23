@@ -23,11 +23,9 @@ export default function Header() {
         <button
           title="Add a store modification"
           onClick={() => setShowAdd((v) => !v)}
-          className="transparent-button"
+          className={`transparent-button ${showAdd ? 'active' : ''}`}
         >
-          <IconAdd
-            style={{ ...iconStyle, ...(showAdd ? { fill: '#8ab4f8' } : {}) }}
-          />
+          <IconAdd style={iconStyle} />
         </button>
         <button
           title="Clear history of modifications"
