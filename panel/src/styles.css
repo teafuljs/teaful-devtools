@@ -53,6 +53,7 @@ main .sidebar > div {
 
 main .code {
   width: 100%;
+  font-size: 12px;
 }
 
 .save-modification {
@@ -73,6 +74,11 @@ main .code {
 .devtools.message {
   margin: 20px;
   text-align: center;
+}
+
+.ant-message {
+  bottom: 20px;
+  top: initial;
 }
 
 @media (prefers-color-scheme: dark) {

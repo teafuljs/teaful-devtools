@@ -1,8 +1,10 @@
 import React from 'react';
-import { useStore } from '../store';
-import initStores from '../util/initStores';
-import IconClear from './icon-clear';
+import message from 'antd/lib/message';
+
 import IconAdd from './icon-add';
+import IconClear from './icon-clear';
+import initStores from '../util/initStores';
+import { useStore, getStore } from '../store';
 
 export default function Header() {
   const [stores] = useStore.stores();
@@ -11,9 +13,25 @@ export default function Header() {
   const [selectedStore, setSelectedStore] = useStore.selectedStore();
   const iconStyle = { width: 13, fill: 'currentColor' };
 
+  function hideAdd() {
+    if (!showAdd) return false;
+
+    const [history] = getStore.stores[selectedStore].history();
+    const [newHistory] = getStore.newHistory()
+
+    setShowAdd(false);
+    if(history[0].store !== newHistory) {
+      message.warning(
+        'The modification panel was closed without applying the changes.',
+      );
+    }
+  
+    return true;
+  }
+
   function clearHistory() {
     initStores();
-    setShowAdd(false);
+    hideAdd();
     setSelectHistory(0);
   }
 
@@ -22,7 +40,7 @@ export default function Header() {
       <div className="buttons">
         <button
           title="Add a store modification"
-          onClick={() => setShowAdd((v) => !v)}
+          onClick={() => !hideAdd() && setShowAdd(true)}
           className={`transparent-button ${showAdd ? 'active' : ''}`}
         >
           <IconAdd style={iconStyle} />

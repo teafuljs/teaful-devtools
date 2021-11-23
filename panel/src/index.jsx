@@ -11,6 +11,7 @@ import {
   unregisterReceiveMessage,
 } from './util/receiveMessage';
 
+import 'antd/dist/antd.css';
 import './styles.css';
 
 function App() {

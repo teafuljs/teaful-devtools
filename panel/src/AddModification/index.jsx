@@ -1,5 +1,6 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import AceEditor from 'react-ace';
+import message from 'antd/lib/message';
 
 import 'ace-builds/src-noconflict/mode-json';
 import 'ace-builds/src-noconflict/theme-github';
@@ -13,7 +14,7 @@ export default function AddModification() {
   const [, setShowAdd] = useStore.showAdd();
   const [selectedStore] = useStore.selectedStore();
   const [history] = useStore.stores[selectedStore].history();
-  const [newHistory, setNewHistory] = useState(history[0].store);
+  const [newHistory, setNewHistory] = useStore.newHistory(history[0].store);
   const theme = window.matchMedia('(prefers-color-scheme: dark)').matches
     ? 'monokai'
     : 'github';
@@ -24,13 +25,13 @@ export default function AddModification() {
       chrome.devtools.inspectedWindow.eval(
         `${TEAFUL}[${selectedStore}]()[1](${newHistory})`,
         (_, isException) => {
-          if (isException) return alert('Failed to modify store');
+          if (isException) return message.error('Failed to modify store');
           setShowAdd(false);
+          message.success('Store modified');
         },
       );
     } catch (e) {
-      console.error(e.message);
-      alert('Error: The store must be in JSON format.');
+      message.error(`Error: The store must be in JSON format. ${e.message}`);
     }
   }
 
