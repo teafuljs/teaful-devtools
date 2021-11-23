@@ -28,7 +28,8 @@ if (process.env.NODE_ENV === 'development') {
   devtoolsBridge()
 }
 
-const { useStore } = createStore({})
+const { useStore: useUser } = createStore({ username: "Aral" })
+const { useStore: useCart } = createStore({ price: 0, items: [] })
 ```
 
 >It's a function to call it in **develpment mode**.
