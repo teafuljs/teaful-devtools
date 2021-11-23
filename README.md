@@ -18,6 +18,8 @@ _Browser extension that allows you to inspect a [Teaful](https://github.com/teaf
 yarn add teaful-devtools
 ```
 
+Tiny tiny... 😊 _(200 B)_
+
 3. **Call the bridge before any `createStore` call**.
 
 ```js

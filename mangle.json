@@ -1,0 +1,16 @@
+{
+  "minify": {
+    "mangle": {
+      "properties": {
+        "regex": "^_",
+        "reserved": [
+          "__TEAFUL_DEVTOOLS__"
+        ]
+      }
+    },
+    "compress": {
+      "hoist_vars": true,
+      "reduce_funcs": true
+    }
+  }
+}
