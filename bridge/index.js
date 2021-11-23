@@ -24,11 +24,11 @@ export default function devtoolsBridge() {
   window.__TEAFUL_DEVTOOLS__ = [];
 
   // Register devtools bridge extra
-  createStore.ext(({ getStore }, { s }) => {
-    let index = window.__TEAFUL_DEVTOOLS__.push(getStore) - 1;
+  createStore.ext((params, subscription) => {
+    let index = window.__TEAFUL_DEVTOOLS__.push(params.getStore) - 1;
 
     // s = subscribe (minified by Teaful)
-    s(".", ({ store, prevStore }) => {
+    subscription.s(".", ({ store, prevStore }) => {
       window.postMessage(
         { source: "teaful-devtools", store, prevStore, index },
         "*"
