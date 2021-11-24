@@ -13,12 +13,14 @@
  * import devtoolsBridge from 'teaful-devtools';
  * 
  * if (process.env.NODE_ENV === 'development') {
- *   devtoolsBridge()
+ *   devtoolsBridge(createStore)
  * }
  * 
  * export const { useStore, getStore } = createStore({});
  */
 export default function devtoolsBridge(createStore) {
+  if (typeof window === 'undefined') return
+
   window.__TEAFUL_DEVTOOLS__ = [];
 
   // Register devtools bridge extra
