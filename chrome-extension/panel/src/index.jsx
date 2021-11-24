@@ -17,6 +17,7 @@ import './styles.css';
 function App() {
   const [showAdd] = useStore.showAdd();
   const [status, setStatus] = useState('loading');
+  const [stores] = useStore.stores();
 
   useEffect(() => {
     initStores()
@@ -43,6 +44,25 @@ function App() {
 
   if (status === 'loading') {
     return null;
+  }
+
+  if (stores.length === 0) {
+    return (
+      <div className="devtools message">
+        No Teaful store has been found.
+        <button
+          style={{ marginLeft: 10, fontSize: 12, cursor: 'pointer' }}
+          onClick={() => {
+            setStatus('loading');
+            initStores()
+              .then(() => setStatus('ok'))
+              .catch(() => setStatus('ko'));
+          }}
+        >
+          Retry
+        </button>
+      </div>
+    );
   }
 
   return (

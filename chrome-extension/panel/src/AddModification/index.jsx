@@ -14,7 +14,7 @@ export default function AddModification() {
   const [, setShowAdd] = useStore.showAdd();
   const [selectedStore] = useStore.selectedStore();
   const [history] = useStore.stores[selectedStore].history();
-  const [newHistory, setNewHistory] = useStore.newHistory(history[0].store);
+  const [newHistory, setNewHistory] = useStore.newHistory(history?.[0]?.store);
   const theme = window.matchMedia('(prefers-color-scheme: dark)').matches
     ? 'monokai'
     : 'github';

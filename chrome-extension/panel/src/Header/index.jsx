@@ -17,15 +17,15 @@ export default function Header() {
     if (!showAdd) return false;
 
     const [history] = getStore.stores[selectedStore].history();
-    const [newHistory] = getStore.newHistory()
+    const [newHistory] = getStore.newHistory();
 
     setShowAdd(false);
-    if(history[0].store !== newHistory) {
+    if (history[0].store !== newHistory) {
       message.warning(
         'The modification panel was closed without applying the changes.',
       );
     }
-  
+
     return true;
   }
 
