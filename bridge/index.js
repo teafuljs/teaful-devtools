@@ -1,5 +1,3 @@
-import createStore from "teaful";
-
 /**
  * 
  * It's a function to call it in develpment mode.
@@ -20,7 +18,7 @@ import createStore from "teaful";
  * 
  * export const { useStore, getStore } = createStore({});
  */
-export default function devtoolsBridge() {
+export default function devtoolsBridge(createStore) {
   window.__TEAFUL_DEVTOOLS__ = [];
 
   // Register devtools bridge extra

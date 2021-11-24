@@ -27,7 +27,7 @@ import createStore from 'teaful'
 import devtoolsBridge from 'teaful-devtools'
 
 if (process.env.NODE_ENV === 'development') {
-  devtoolsBridge()
+  devtoolsBridge(createStore)
 }
 
 const { useStore: useUser } = createStore({ username: "Aral" })
