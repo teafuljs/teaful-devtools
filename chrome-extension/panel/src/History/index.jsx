@@ -7,7 +7,7 @@ export default function History() {
   const [selectedStore] = useStore.selectedStore();
   const [history] = useStore.stores[selectedStore].history();
   const currentHistory = history?.[selectedHistory];
-  const max = history.length - 1;
+  const max = history?.length - 1;
 
   useEffect(() => {
     function move(e) {
