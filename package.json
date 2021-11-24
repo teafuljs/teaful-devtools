@@ -1,6 +1,6 @@
 {
   "name": "teaful-devtools",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Browser extension for inspection Teaful applications",
   "license": "MIT",
   "keywords": [
@@ -36,19 +36,19 @@
     "files": [
       {
         "path": "./dist/index.js",
-        "maxSize": "300 B"
+        "maxSize": "350 B"
       },
       {
         "path": "./dist/index.modern.js",
-        "maxSize": "300 B"
+        "maxSize": "350 B"
       },
       {
         "path": "./dist/index.m.js",
-        "maxSize": "300 B"
+        "maxSize": "350 B"
       },
       {
         "path": "./dist/index.umd.js",
-        "maxSize": "300 B"
+        "maxSize": "350 B"
       }
     ]
   },

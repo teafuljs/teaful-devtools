@@ -1,24 +1,18 @@
+import createStore from 'teaful'
+
 /**
+ * How to use it:
+ * @example 
  * 
- * It's a function to call it in develpment mode.
- *  
- * It's not recommended in production since anyone could see all
- * the store modifications and modify the content of the store.
+ * // Must be the first import of your app (before components imports)
+ * import "teaful-devtools";
+ * import { render } from 'preact';
+ * import App from './components/App';
+ *
+ * render(<App />, document.getElementById('root'));
  * 
- * So the responsibility lies with who uses the library. 
- * 
- * @example To use it:
- * 
- * import createStore from 'teaful';
- * import devtoolsBridge from 'teaful-devtools';
- * 
- * if (process.env.NODE_ENV === 'development') {
- *   devtoolsBridge(createStore)
- * }
- * 
- * export const { useStore, getStore } = createStore({});
  */
-export default function devtoolsBridge(createStore) {
+function initDevtools() {
   if (typeof window === 'undefined') return
 
   window.__TEAFUL_DEVTOOLS__ = [];
@@ -36,3 +30,5 @@ export default function devtoolsBridge(createStore) {
     });
   });
 }
+
+initDevtools()

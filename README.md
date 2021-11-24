@@ -18,30 +18,42 @@ _Browser extension that allows you to inspect a [Teaful](https://github.com/teaf
 yarn add teaful-devtools
 ```
 
-Tiny tiny... 😊 _(200 B)_
+Tiny tiny... 😊 _(~200 B)_
 
-3. **Call the bridge before any `createStore` call**.
+3. **Use the bridge**.
+
+In your main file, where you have the render, you must have the teaful-devtools import at the top, before the imports of your application (components, store, etc).
 
 ```js
-import createStore from 'teaful'
-import devtoolsBridge from 'teaful-devtools'
+import 'teaful-devtools'
+import { render } from 'preact';
+import App from './components/App';
 
-if (process.env.NODE_ENV === 'development') {
-  devtoolsBridge(createStore)
-}
-
-const { useStore: useUser } = createStore({ username: "Aral" })
-const { useStore: useCart } = createStore({ price: 0, items: [] })
+render(<App />, document.getElementById('root'));
 ```
-
->It's a function to call it in **develpment mode**.
->
->It's not recommended in production since anyone could see all the store modifications and modify the content of the store.
->
->So the responsibility lies with who uses the library.
 
 4. **Try it!**
 
 <div align="center">
 <img src="demo.gif" alt="demo" />
 </div>
+
+## How to strip devtools from production
+
+Most bundlers allow you strip out code when they detect that a branch inside an if-statement will never be hit. We can use this to only include `teaful-devtools` during development and save those precious bytes in a production build.
+
+```js
+// Must be the first import
+if (process.env.NODE_ENV==='development') {
+  // Must use require here as import statements are only allowed
+  // to exist at top-level.
+  require("teaful-devtools");
+}
+
+import { render } from 'preact';
+import App from './components/App';
+
+render(<App />, document.getElementById('root'));
+```
+
+Make sure to set the `NODE_ENV` variable to the correct value in your build tool.
