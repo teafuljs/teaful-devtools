@@ -6,6 +6,8 @@ import IconClear from './icon-clear';
 import initStores from '../util/initStores';
 import { useStore, getStore } from '../store';
 
+const [,setNewHistory] = getStore.newHistory();
+
 export default function Header() {
   const [stores] = useStore.stores();
   const [showAdd, setShowAdd] = useStore.showAdd();
@@ -59,8 +61,10 @@ export default function Header() {
           value={selectedStore}
           className="store"
           onChange={(e) => {
-            setSelectedStore(+e.target.value);
+            const val = +e.target.value
+            setSelectedStore(val);
             setSelectHistory(0);
+            setNewHistory(stores[val].history?.[0]?.store);
           }}
         >
           {stores.map((store, index) => (
