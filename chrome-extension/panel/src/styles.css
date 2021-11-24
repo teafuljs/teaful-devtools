@@ -53,6 +53,8 @@ main .sidebar > div {
 
 main .code {
   width: 100%;
+  max-height: calc(100vh - 25px);
+  overflow: auto;
   font-size: 12px;
 }
 
