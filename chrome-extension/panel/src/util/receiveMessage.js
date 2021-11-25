@@ -1,7 +1,7 @@
 import port from './port';
 import { getStore } from '../store';
 
-function receiveMessage({ source, store: s, prevStore: p, index = 0 }) {
+function receiveMessage({ source, store: s, prevStore: p, index = 0, stack }) {
   if (source !== 'teaful-devtools') return;
   const store = s ? JSON.stringify(s, undefined, 2) : undefined;
   const prevStore = p ? JSON.stringify(p, undefined, 2) : undefined;
@@ -10,6 +10,7 @@ function receiveMessage({ source, store: s, prevStore: p, index = 0 }) {
   const [, setSelectedHistory] = getStore.selectedHistory();
   const [, setNewHistory] = getStore.newHistory();
   const [, setSelectedStore] = getStore.selectedStore();
+  console.log({ stack })
   setHistory((h) => [{ epoch: Date.now(), store, prevStore }, ...h]);
   setSelectedStore(index);
   setSelectedHistory(0);

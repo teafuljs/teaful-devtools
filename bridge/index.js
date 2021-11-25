@@ -24,7 +24,13 @@ function initDevtools() {
     // s = subscribe (minified by Teaful)
     subscription.s(".", ({ store, prevStore }) => {
       window.postMessage(
-        { source: "teaful-devtools", store, prevStore, index },
+        { 
+          source: "teaful-devtools", 
+          store, 
+          prevStore, 
+          index, 
+          stack: Error().stack,
+        },
         "*"
       );
     });
