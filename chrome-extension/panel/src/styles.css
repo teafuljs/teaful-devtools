@@ -9,6 +9,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+button {
+  cursor: pointer;
+}
+
 header {
   border-bottom: 1px solid #8888887a;
   height: 25px;
@@ -58,7 +62,7 @@ main .code {
   font-size: 12px;
 }
 
-.save-modification {
+.save-modification, .stack {
   display: flex;
   height: 30px;
   align-items: center;
@@ -70,7 +74,6 @@ main .code {
 .transparent-button {
   background-color: transparent;
   border: none;
-  cursor: pointer;
 }
 
 .devtools.message {
@@ -81,6 +84,11 @@ main .code {
 .ant-message {
   bottom: 20px;
   top: initial;
+}
+
+.stack-table td {
+  padding: 10px;
+  font-size: 12px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -120,17 +128,21 @@ main .code {
     background-color: #111;
   }
 
-  .save-modification button {
+  .save-modification button, .stack button {
     color: #919191;
     background-color: #3e3c3c;
   }
 
-  .save-modification button:hover {
+  .save-modification button:hover, .stack button:hover {
     color: #dbdbdb;
   }
 
   .transparent-button.active {
     color: #8ab4f8;
+  }
+
+  .stack-table tr:nth-child(even) {
+    background-color: #202020;
   }
 }
 
@@ -163,16 +175,20 @@ main .code {
     background-color: #f9f9f9;
   }
 
-  .save-modification button {
+  .save-modification button, .stack button {
     color: #080808c7;
     border: 1px solid #d8d8d8;
   }
 
-  .save-modification button:hover {
+  .save-modification button:hover, .stack button:hover {
     color: #202124;
   }
 
   .transparent-button.active {
     color: #1b73e8;
+  }
+
+  .stack-table tr:nth-child(even) {
+    background-color: #f9f9f9;
   }
 }

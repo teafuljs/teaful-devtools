@@ -5,4 +5,5 @@ export const { useStore, getStore } = createStore({
   selectedHistory: 0,
   stores: [],
   showAdd: false,
+  showStack: false,
 });

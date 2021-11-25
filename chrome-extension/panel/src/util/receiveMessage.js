@@ -10,8 +10,7 @@ function receiveMessage({ source, store: s, prevStore: p, index = 0, stack }) {
   const [, setSelectedHistory] = getStore.selectedHistory();
   const [, setNewHistory] = getStore.newHistory();
   const [, setSelectedStore] = getStore.selectedStore();
-  console.log({ stack })
-  setHistory((h) => [{ epoch: Date.now(), store, prevStore }, ...h]);
+  setHistory((h) => [{ epoch: Date.now(), store, prevStore, stack }, ...h]);
   setSelectedStore(index);
   setSelectedHistory(0);
   if (!showAdd) setNewHistory(store);
