@@ -73,17 +73,13 @@ export default function History() {
                 </div>
                 {showStack && (
                   <table className="stack-table">
-                    <tr>
-                      <th>Function</th>
-                      <th>File</th>
-                    </tr>
                     {stackStringToArray(currentHistory.stack).map((l) => {
                       const file = l.file + ':' + l.line + ':' + l.column;
 
                       return (
                         <tr key={file}>
-                          <td>{l.function}</td>
                           <td>
+                            <div>{l.function}</div>
                             <a
                               onClick={() => {
                                 chrome.devtools.panels.openResource(

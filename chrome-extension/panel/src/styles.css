@@ -60,6 +60,7 @@ main .code {
   max-height: calc(100vh - 25px);
   overflow: auto;
   font-size: 12px;
+  overflow-x: hidden;
 }
 
 .save-modification, .stack {
@@ -84,6 +85,12 @@ main .code {
 .ant-message {
   bottom: 20px;
   top: initial;
+}
+
+.stack-table {
+  max-width: 100%;
+  display: block;
+  overflow: auto;
 }
 
 .stack-table td {
