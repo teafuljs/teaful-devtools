@@ -13,6 +13,10 @@ _Browser extension that allows you to inspect a [Teaful](https://github.com/teaf
 [![Weekly downloads](https://badgen.net/npm/dw/teaful-devtools?color=blue)](https://www.npmjs.com/package/teaful-devtools)
 [![GitHub Discussions: Chat With Us](https://badgen.net/badge/discussions/chat%20with%20us/purple)](https://github.com/teafuljs/teaful-devtools/discussions)
 
+<div align="center">
+<img src="demo.png" alt="demo" />
+</div>
+
 
 ## Getting started
 

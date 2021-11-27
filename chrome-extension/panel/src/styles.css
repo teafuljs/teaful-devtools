@@ -87,15 +87,18 @@ main .code {
   top: initial;
 }
 
-.stack-table {
-  max-width: 100%;
+.stack-list {
+  width: 100%;
   display: block;
-  overflow: auto;
+  list-style-type: none;
+  padding: 0;
 }
 
-.stack-table td {
+.stack-list li {
   padding: 10px;
   font-size: 12px;
+  width: 100%;
+  word-wrap: break-word;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -148,7 +151,7 @@ main .code {
     color: #8ab4f8;
   }
 
-  .stack-table tr:nth-child(even) {
+  .stack-list li:nth-child(even) {
     background-color: #202020;
   }
 }
@@ -195,7 +198,23 @@ main .code {
     color: #1b73e8;
   }
 
-  .stack-table tr:nth-child(even) {
+  .stack-list li:nth-child(even) {
     background-color: #f9f9f9;
+  }
+}
+
+@media (min-width: 920px) {
+  .code {
+    display: flex;
+  }
+
+  .code > div {
+    flex: 1;
+    height: calc(100vh - 25px);
+    overflow-y: auto;
+  }
+
+  .stack button {
+    position: fixed;
   }
 }

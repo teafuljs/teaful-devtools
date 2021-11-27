@@ -6,6 +6,7 @@ import { useStore } from '../store';
 
 export default function History() {
   const btn = useRef();
+  const code = useRef();
   const [selectedHistory, setSelectHistory] = useStore.selectedHistory();
   const [selectedStore] = useStore.selectedStore();
   const [showStack, setShowStack] = useStore.showStack();
@@ -23,6 +24,7 @@ export default function History() {
     return () => document.removeEventListener('keydown', move);
   }, [max]);
 
+  // Scroll to stack
   useEffect(() => {
     if (showStack && btn.current) {
       btn.current.scrollIntoView({
@@ -40,7 +42,10 @@ export default function History() {
           <div
             className={i === selectedHistory ? 'active' : ''}
             key={epoch + i}
-            onClick={() => setSelectHistory(i)}
+            onClick={() => {
+              setSelectHistory(i);
+              setShowStack(false);
+            }}
           >
             <div style={{ fontWeight: 'bold' }}>#{history.length - i}</div>
             <small>
@@ -51,20 +56,22 @@ export default function History() {
           </div>
         ))}
       </div>
-      <div className="code">
+      <div ref={code} className="code">
         {currentHistory && (
           <>
-            <ReactDiffViewer
-              useDarkTheme={
-                window.matchMedia('(prefers-color-scheme: dark)').matches
-              }
-              hideLineNumbers
-              oldValue={currentHistory.prevStore}
-              newValue={currentHistory.store}
-              splitView={false}
-            />
+            <div>
+              <ReactDiffViewer
+                useDarkTheme={
+                  window.matchMedia('(prefers-color-scheme: dark)').matches
+                }
+                hideLineNumbers
+                oldValue={currentHistory.prevStore}
+                newValue={currentHistory.store}
+                splitView={false}
+              />
+            </div>
             {currentHistory.stack && (
-              <>
+              <div className="stack-wrapper">
                 <div className="stack">
                   <button ref={btn} onClick={(e) => setShowStack((v) => !v)}>
                     {showStack ? '▲ ' : '▼ '}
@@ -72,33 +79,31 @@ export default function History() {
                   </button>
                 </div>
                 {showStack && (
-                  <table className="stack-table">
+                  <ul className="stack-list">
                     {stackStringToArray(currentHistory.stack).map((l) => {
                       const file = l.file + ':' + l.line + ':' + l.column;
 
                       return (
-                        <tr key={file}>
-                          <td>
-                            <div>{l.function}</div>
-                            <a
-                              onClick={() => {
-                                chrome.devtools.panels.openResource(
-                                  l.file,
-                                  l.line,
-                                  l.column,
-                                );
-                              }}
-                              href="javascript:void(0)"
-                            >
-                              {file}
-                            </a>
-                          </td>
-                        </tr>
+                        <li key={file}>
+                          <div>{l.function}</div>
+                          <a
+                            onClick={() => {
+                              chrome.devtools.panels.openResource(
+                                l.file,
+                                l.line,
+                                l.column,
+                              );
+                            }}
+                            href="javascript:void(0)"
+                          >
+                            {file}
+                          </a>
+                        </li>
                       );
                     })}
-                  </table>
+                  </ul>
                 )}
-              </>
+              </div>
             )}
           </>
         )}
