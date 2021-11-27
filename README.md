@@ -6,12 +6,12 @@ _Browser extension that allows you to inspect a [Teaful](https://github.com/teaf
 
 
 [![npm version](https://badge.fury.io/js/teaful-devtools.svg)](https://badge.fury.io/js/teaful-devtools)
+[![PRs Welcome][badge-prwelcome]][prwelcome]
 [![gzip size](https://img.badgesize.io/https://unpkg.com/teaful-devtools?compression=gzip&label=gzip)](https://unpkg.com/teaful-devtools)
 [![CI Status](https://github.com/teafuljs/teaful-devtools/actions/workflows/test.yml/badge.svg)](https://github.com/teafuljs/teaful-devtools/actions/workflows/test.yml)
 [![Maintenance Status](https://badgen.net/badge/maintenance/active/green)](https://github.com/teafuljs/teaful-devtools#maintenance-status)
 [![Weekly downloads](https://badgen.net/npm/dw/teaful-devtools?color=blue)](https://www.npmjs.com/package/teaful-devtools)
 [![GitHub Discussions: Chat With Us](https://badgen.net/badge/discussions/chat%20with%20us/purple)](https://github.com/teafuljs/teaful-devtools/discussions)
-[![PRs Welcome][badge-prwelcome]][prwelcome]
 
 
 ## Getting started

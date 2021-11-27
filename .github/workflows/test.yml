@@ -17,7 +17,7 @@ jobs:
       - name: Install dependencies
         run: |
           npm install -g yarn
-      - name: yarn install, build, and test
+      - name: yarn install, build, and test size
         run: |
           yarn install
           yarn build
