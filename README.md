@@ -17,6 +17,13 @@ _Browser extension that allows you to inspect a [Teaful](https://github.com/teaf
 <img src="demo.png" alt="demo" />
 </div>
 
+## Features ✨
+
+- Debug stores changes:
+    - What has changed
+    - Who changed it (stack trace)
+- Modify stores
+
 
 ## Getting started
 
@@ -45,10 +52,6 @@ render(<App />, document.getElementById('root'));
 ```
 
 4. **Try it!**
-
-<div align="center">
-<img src="demo.gif" alt="demo" />
-</div>
 
 ## How to strip devtools from production
 
