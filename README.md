@@ -23,6 +23,7 @@ _Browser extension that allows you to inspect a [Teaful](https://github.com/teaf
     - What has changed
     - Who changed it (stack trace)
 - Modify stores
+- Dark & light mode
 
 
 ## Getting started
