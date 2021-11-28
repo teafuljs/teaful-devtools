@@ -69,3 +69,9 @@ render(<App />, document.getElementById('root'));
 ```
 
 Make sure to set the `NODE_ENV` variable to the correct value in your build tool.
+
+## Routemap
+
+- [x] Teaful DevTools for Chrome 
+- [ ] Teaful DevTools for Firefox
+- [ ] Teaful DevTools for Edge
