@@ -3,3 +3,5 @@ build
 node_modules
 .vscode
 dist
+.DS_Store
+*.zip
