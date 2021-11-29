@@ -4,6 +4,8 @@
 
 _Browser extension that allows you to inspect a [Teaful](https://github.com/teafuljs/teaful) store._
 
+> 🚨 It will be **available soon**. When you can start using it, **Teaful version 0.9** will be released and you will be able to use it with Teaful 0.9.
+
 
 [![npm version](https://badge.fury.io/js/teaful-devtools.svg)](https://badge.fury.io/js/teaful-devtools)
 [![PRs Welcome][badge-prwelcome]][prwelcome]
