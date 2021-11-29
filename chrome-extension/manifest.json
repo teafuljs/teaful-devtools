@@ -3,7 +3,7 @@
   "author": "Aral Roca",
   "name": "Teaful DevTools",
   "short_name": "Teaful DevTools",
-  "description": "Teaful DevTools for debugging application's state changes.",
+  "description": "Teaful DevTools is for debugging application's state changes using Teaful as React state management",
   "homepage_url": "https://github.com/teafuljs/teaful-devtools",
   "manifest_version": 2,
   "icons": {
