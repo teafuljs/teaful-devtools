@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import AddModification from './AddModification';
 import Header from './Header';
 import History from './History';
+import getTheme from './util/getTheme';
 import initStores from './util/initStores';
 import { useStore } from './store';
 import {
@@ -20,6 +21,7 @@ function App() {
   const [stores] = useStore.stores();
 
   useEffect(() => {
+    document.body.classList.add(getTheme());
     initStores()
       .then(() => {
         registerReceiveMessage();

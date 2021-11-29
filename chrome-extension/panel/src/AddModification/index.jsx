@@ -6,8 +6,9 @@ import 'ace-builds/src-noconflict/mode-json';
 import 'ace-builds/src-noconflict/theme-github';
 import 'ace-builds/src-noconflict/theme-monokai';
 
-import { useStore } from '../store';
+import getTheme from '../util/getTheme';
 import { TEAFUL } from '../constants';
+import { useStore } from '../store';
 
 export default function AddModification() {
   const epoch = useRef(Date.now());
@@ -15,9 +16,7 @@ export default function AddModification() {
   const [selectedStore] = useStore.selectedStore();
   const [history] = useStore.stores[selectedStore].history();
   const [newHistory, setNewHistory] = useStore.newHistory(history?.[0]?.store);
-  const theme = window.matchMedia('(prefers-color-scheme: dark)').matches
-    ? 'monokai'
-    : 'github';
+  const theme = getTheme() === 'dark' ? 'monokai' : 'github';
 
   function modify() {
     try {

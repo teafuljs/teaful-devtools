@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import ReactDiffViewer from 'react-diff-viewer';
 
+import getTheme from '../util/getTheme';
 import stackStringToArray from '../util/stackStringToArray';
 import { useStore } from '../store';
 
@@ -61,9 +62,7 @@ export default function History() {
           <>
             <div>
               <ReactDiffViewer
-                useDarkTheme={
-                  window.matchMedia('(prefers-color-scheme: dark)').matches
-                }
+                useDarkTheme={getTheme() === 'dark'}
                 hideLineNumbers
                 oldValue={currentHistory.prevStore}
                 newValue={currentHistory.store}

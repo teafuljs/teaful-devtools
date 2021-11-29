@@ -101,106 +101,104 @@ main .code {
   word-wrap: break-word;
 }
 
-@media (prefers-color-scheme: dark) {
-  body {
-    color: #dbdbdb;
-    background-color: #292a2d;
-  }
-
-  header button {
-    color: #919191;
-  }
-
-  header button:hover {
-    color: #dbdbdb;
-  }
-
-  header {
-    background-color: #292a2d;
-  }
-
-  header select {
-    color: #dbdbdb;
-  }
-
-  main .sidebar > div {
-    border-right: 1px solid #333;
-    color: #919191;
-  }
-  
-  main .sidebar > div:hover:not(.active) {
-    background-color: #202020;
-    color: #dbdbdb;
-  }
-  
-  main .sidebar .active {
-    color: #dbdbdb;
-    background-color: #111;
-  }
-
-  .save-modification button, .stack button {
-    color: #919191;
-    background-color: #3e3c3c;
-  }
-
-  .save-modification button:hover, .stack button:hover {
-    color: #dbdbdb;
-  }
-
-  .transparent-button.active {
-    color: #8ab4f8;
-  }
-
-  .stack-list li:nth-child(even) {
-    background-color: #202020;
-  }
+/* DARK THEME */
+body.dark {
+  color: #dbdbdb;
+  background-color: #292a2d;
 }
 
-@media (prefers-color-scheme: light) {
-  header, .save-modification {
-    background-color: #f1f3f4;
-  }
+body.dark header button {
+  color: #919191;
+}
 
-  .save-modification {
-    border-top: 1px solid #8888887a;
-  }
+body.dark header button:hover {
+  color: #dbdbdb;
+}
 
-  header button {
-    color: #6e6e6e;
-  }
+body.dark header {
+  background-color: #292a2d;
+}
 
-  header button:hover {
-    color: #202124;
-  }
+body.dark header select {
+  color: #dbdbdb;
+}
 
-  main .sidebar > div {
-    border-right: 1px solid #f9f9ef;
-  }
-  
-  main .sidebar > div:hover:not(.active) {
-    background-color: #f9f9ef;
-  }
-  
-  main .sidebar .active {
-    background-color: #f9f9f9;
-  }
+body.dark main .sidebar > div {
+  border-right: 1px solid #333;
+  color: #919191;
+}
 
-  .save-modification button, .stack button {
-    color: #080808c7;
-    border: 1px solid #d8d8d8;
-  }
+body.dark main .sidebar > div:hover:not(.active) {
+  background-color: #202020;
+  color: #dbdbdb;
+}
 
-  .save-modification button:hover, .stack button:hover {
-    color: #202124;
-  }
+body.dark main .sidebar .active {
+  color: #dbdbdb;
+  background-color: #111;
+}
 
-  .transparent-button.active {
-    color: #1b73e8;
-  }
+body.dark .save-modification button, body.dark .stack button {
+  color: #919191;
+  background-color: #3e3c3c;
+}
 
-  .stack-list li:nth-child(even) {
-    background-color: #f9f9f9;
-  }
+body.dark .save-modification button:hover, body.dark .stack button:hover {
+  color: #dbdbdb;
+}
+
+body.dark .transparent-button.active {
+  color: #8ab4f8;
+}
+
+body.dark .stack-list li:nth-child(even) {
+  background-color: #202020;
+}
+
+/* LIGHT THEME */
+body.light header, body.light .save-modification {
+  background-color: #f1f3f4;
+}
+
+body.light .save-modification {
+  border-top: 1px solid #8888887a;
+}
+
+body.light header button {
+  color: #6e6e6e;
+}
+
+body.light header button:hover {
+  color: #202124;
+}
+
+body.light main .sidebar > div {
+  border-right: 1px solid #f9f9ef;
+}
+
+body.light main .sidebar > div:hover:not(.active) {
+  background-color: #f9f9ef;
+}
+
+body.light main .sidebar .active {
+  background-color: #f9f9f9;
+}
+
+body.light .save-modification button, body.light .stack button {
+  color: #080808c7;
+  border: 1px solid #d8d8d8;
+}
+
+body.light .save-modification button:hover, body.light .stack button:hover {
+  color: #202124;
+}
+
+body.light .transparent-button.active {
+  color: #1b73e8;
+}
+
+body.light .stack-list li:nth-child(even) {
+  background-color: #f9f9f9;
 }
 
 @media (min-width: 920px) {
