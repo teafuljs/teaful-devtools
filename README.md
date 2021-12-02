@@ -29,6 +29,8 @@ _Browser extension that allows you to inspect a [Teaful](https://github.com/teaf
 1. **Install the DevTools extension**
 
     - [Chrome](https://chrome.google.com/webstore/detail/teaful-devtools/lficdnnjoackdnaddfcgllmjdocofadc)
+    - Firefox _(not yet)_
+    - Edge _(not yet)_
 
 2. **Install the bridge in your app**:
 
