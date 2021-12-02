@@ -21,9 +21,7 @@ _Browser extension that allows you to inspect a [Teaful](https://github.com/teaf
 
 ## Features ✨
 
-- Debug stores changes:
-    - What has changed
-    - Who changed it (stack trace)
+- Debug stores changes (when, what, where, who, how & why)
 - Modify stores
 - Dark & light mode
 
@@ -32,7 +30,7 @@ _Browser extension that allows you to inspect a [Teaful](https://github.com/teaf
 
 1. **Install the DevTools extension**
 
-    - Chrome
+    - [Chrome](https://chrome.google.com/webstore/detail/teaful-devtools/lficdnnjoackdnaddfcgllmjdocofadc)
 
 2. **Install the bridge in your app**:
 
