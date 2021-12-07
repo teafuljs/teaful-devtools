@@ -5,6 +5,8 @@ import getTheme from '../util/getTheme';
 import stackStringToArray from '../util/stackStringToArray';
 import { useStore } from '../store';
 
+const isFF = navigator.userAgent.indexOf('Firefox') !== -1;
+
 export default function History() {
   const btn = useRef();
   const code = useRef();
@@ -87,11 +89,17 @@ export default function History() {
                           <div>{l.function}</div>
                           <a
                             onClick={() => {
+                              if(isFF) {
+                                chrome.devtools.inspectedWindow.eval(`
+                                  window.open('${l.file}#L${l.line}', '_blank'); 
+                                `)
+                                return                          
+                              }
                               chrome.devtools.panels.openResource(
                                 l.file,
                                 l.line,
                                 l.column,
-                              );
+                              );                                                         
                             }}
                             href="javascript:void(0)"
                           >
