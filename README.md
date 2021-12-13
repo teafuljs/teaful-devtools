@@ -30,7 +30,7 @@ _Browser extension that allows you to inspect a [Teaful](https://github.com/teaf
 
     - [Chrome](https://chrome.google.com/webstore/detail/teaful-devtools/lficdnnjoackdnaddfcgllmjdocofadc)
     - [Firefox](https://addons.mozilla.org/es/firefox/addon/teaful-devtools/)
-    - Edge _(not yet)_
+    - [Edge](https://microsoftedge.microsoft.com/addons/detail/teaful-devtools/kcplohinngjiammdehjlimgdpamhhkmn?hl=en-GB)
 
 2. **Install the bridge in your app**:
 
@@ -74,8 +74,3 @@ render(<App />, document.getElementById('root'));
 
 Make sure to set the `NODE_ENV` variable to the correct value in your build tool.
 
-## Routemap
-
-- [x] Teaful DevTools for Chrome 
-- [x] Teaful DevTools for Firefox
-- [ ] Teaful DevTools for Edge
