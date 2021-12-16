@@ -1,4 +1,4 @@
- <img src="https://raw.githubusercontent.com/teafuljs/teaful/master/logo.svg" width="70" alt="Teaful" align="left" />
+ <img src="https://raw.githubusercontent.com/teafuljs/teaful/master/assets/logo.svg" width="70" alt="Teaful" align="left" />
 
 # Teaful DevTools
 
