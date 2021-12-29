@@ -23,16 +23,21 @@ function initDevtools() {
 
     // s = subscribe (minified by Teaful)
     subscription.s(".", ({ store, prevStore }) => {
-      window.postMessage(
-        { 
-          source: "teaful-devtools", 
-          store, 
-          prevStore, 
-          index, 
-          stack: Error().stack,
-        },
-        "*"
-      );
+      try {
+        window.postMessage(
+          { 
+            source: "teaful-devtools", 
+            store, 
+            prevStore, 
+            index, 
+            stack: Error().stack,
+          },
+          "*"
+        );
+      } catch (e) {
+        console.warn('teaful-devtools failed to report store state.');
+        console.warn('Perhaps you are storing an unserializable object.');
+      }
     });
   });
 }
