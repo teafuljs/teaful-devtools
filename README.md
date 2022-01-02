@@ -1,4 +1,7 @@
  <img src="https://raw.githubusercontent.com/teafuljs/teaful/master/assets/logo.svg" width="70" alt="Teaful" align="left" />
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 # Teaful DevTools
 
@@ -74,3 +77,23 @@ render(<App />, document.getElementById('root'));
 
 Make sure to set the `NODE_ENV` variable to the correct value in your build tool.
 
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="http://mrclay.org/"><img src="https://avatars.githubusercontent.com/u/170687?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Steve Clay</b></sub></a><br /><a href="https://github.com/teafuljs/teaful-devtools/issues?q=author%3Amrclay" title="Bug reports">🐛</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
