@@ -1,7 +1,5 @@
  <img src="https://raw.githubusercontent.com/teafuljs/teaful/master/assets/logo.svg" width="70" alt="Teaful" align="left" />
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
+ 
 
 # Teaful DevTools
 
@@ -15,6 +13,9 @@ _Browser extension that allows you to inspect a [Teaful](https://github.com/teaf
 [![Weekly downloads](https://badgen.net/npm/dw/teaful-devtools?color=blue)](https://www.npmjs.com/package/teaful-devtools)
 [![GitHub Discussions: Chat With Us](https://badgen.net/badge/discussions/chat%20with%20us/purple)](https://github.com/teafuljs/teaful-devtools/discussions)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/teafuljs/teaful-devtools/pulls)
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <div align="center">
 <img src="demo.png" alt="demo" />
@@ -87,6 +88,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
+    <td align="center"><a href="https://aralroca.com"><img src="https://avatars3.githubusercontent.com/u/13313058?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Aral Roca Gomez</b></sub></a><br /><a href="#maintenance-aralroca" title="Maintenance">🚧</a> <a href="https://github.com/teafuljs/teaful/commits?author=aralroca" title="Code">💻</a></td>
     <td align="center"><a href="http://mrclay.org/"><img src="https://avatars.githubusercontent.com/u/170687?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Steve Clay</b></sub></a><br /><a href="https://github.com/teafuljs/teaful-devtools/issues?q=author%3Amrclay" title="Bug reports">🐛</a></td>
   </tr>
 </table>
