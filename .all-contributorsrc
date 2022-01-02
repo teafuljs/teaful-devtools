@@ -1,0 +1,24 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "mrclay",
+      "name": "Steve Clay",
+      "avatar_url": "https://avatars.githubusercontent.com/u/170687?v=4",
+      "profile": "http://mrclay.org/",
+      "contributions": [
+        "bug"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "teaful-devtools",
+  "projectOwner": "teafuljs",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
