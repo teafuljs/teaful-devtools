@@ -55,7 +55,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "microbundle",
-    "build:chrome-extension": "cd chrome-extension/panel && yarn build && cd ../..",
+    "build:devtools": "cd devtools/panel && yarn build && cd ../..",
     "dev": "microbundle watch",
     "prepublish": "yarn build"
   },
